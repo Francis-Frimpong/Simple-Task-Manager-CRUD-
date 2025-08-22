@@ -7,53 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <div class="header">
-          <h1 class="title">✅ Task Manager</h1>
-          <div class="sub">JSONPlaceholder + Axios</div>
-        </div>
-
-        <form id="todoForm" class="row cols-3">
-          <input id="todoTitle" placeholder="New task title" />
-          <select id="todoUser">
-            <option value="1">User 1</option>
-            <option value="2">User 2</option>
-            <option value="3">User 3</option>
-          </select>
-          <div class="flex">
-            <button class="btn" id="btnAdd">Add</button>
-            <button class="btn-ghost" id="btnLoad">Load</button>
-          </div>
-        </form>
-
-        <div class="card" style="margin-top: 1rem">
-          <ul id="todoList" class="reset"></ul>
-        </div>
-
-        <template id="todoItemTpl">
-          <li
-            class="kv"
-            style="
-              justify-content: space-between;
-              padding: 0.5rem;
-              border-bottom: 1px solid #eee;
-            "
-          >
-            <div class="kv">
-              <input type="checkbox" class="todo-check" />
-              <span class="todo-title"></span>
-            </div>
-            <div class="flex">
-              <button class="btn-ghost btn-edit">Edit</button>
-              <button class="btn-ghost btn-del">Delete</button>
-            </div>
-          </li>
-        </template>
-
-        <div id="todoError" class="footer-note"></div>
-      </div>
-    </section>
+    <div class="task-container">
+      <h2>Task Manager</h2>
+      <input type="text" id="taskInput" placeholder="New task" />
+      <button id="addTask">Add</button>
+      <ul id="taskList"></ul>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
