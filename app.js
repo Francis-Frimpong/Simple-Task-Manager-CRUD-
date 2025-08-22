@@ -14,6 +14,18 @@ class TaskApp {
       for (const task of tasks) {
         const li = document.createElement("li");
         li.textContent = task.title;
+        const div = document.createElement("div");
+        div.classList.add("actions");
+        const checkBtn = document.createElement("button");
+        checkBtn.textContent = "✓";
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "✗";
+        deleteBtn.classList.add("delete");
+
+        div.appendChild(checkBtn);
+        div.appendChild(deleteBtn);
+        li.appendChild(div);
 
         document.getElementById("taskList").appendChild(li);
       }
@@ -31,6 +43,19 @@ class TaskApp {
     const li = document.createElement("li");
     li.textContent = newTask.title;
 
+    const div = document.createElement("div");
+    div.classList.add("actions");
+    const checkBtn = document.createElement("button");
+    checkBtn.textContent = "✓";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "✗";
+    deleteBtn.classList.add("delete");
+
+    div.appendChild(checkBtn);
+    div.appendChild(deleteBtn);
+    li.appendChild(div);
+
     taskList.appendChild(li);
   }
 }
@@ -45,7 +70,7 @@ addTask.addEventListener("click", () => {
   inputTask.value = "";
 });
 
-axios
-  .get("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => console.log(res.data))
-  .catch((err) => console.error(err));
+// axios
+//   .get("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => console.log(res.data))
+//   .catch((err) => console.error(err));
